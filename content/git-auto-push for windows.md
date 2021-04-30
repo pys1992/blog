@@ -81,7 +81,7 @@ Set WshShell = Nothing
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210228185927.png)
 
-填写需要运行的脚本的完整路径，即上面我们新建的 `AutoPushDaemon.VBS`。如图：
+填写需要运行的脚本的完整路径，即上面新建的 `AutoPushDaemon.VBS`。如图：
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210228190134.png)
 
