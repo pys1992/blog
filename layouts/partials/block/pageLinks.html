@@ -1,0 +1,6 @@
+{{ range .Pages.ByLastmod.Reverse }}
+    <a href="{{.Permalink}}">
+        <span>{{ .Params.icon }} {{ partial "block/title.html" . }}</span>
+        {{ partial "block/datetime.html" . }}
+    </a>
+{{ end }}

@@ -1,0 +1,9 @@
+{{ define "content" }}
+     {{ partial "block/article.html" (dict "Page" .) }}
+
+     {{ with .Pages }}  
+          <div class="page-links">     
+               {{ partial "block/pageLinks.html" $ }}
+          </div>
+     {{ end }}
+{{ end }}

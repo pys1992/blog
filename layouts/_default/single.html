@@ -1,0 +1,13 @@
+{{ define "content" }}
+        {{ printf "GitInfo debug:: %#v" $.Lastmod }}
+
+    {{ partial "block/article.html"  (dict "Page" . "Lastmod" .Lastmod "ShowTOC" true) }}
+
+    <script src=https://utterances.pys.im/client.js
+        repo="pys1992/blog"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+{{ end }}

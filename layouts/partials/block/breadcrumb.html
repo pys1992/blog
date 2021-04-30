@@ -1,0 +1,28 @@
+<nav>
+    <ol>
+        {{ template "breadcrumb" (dict "p1" . "p2" .) }}
+    </ol>
+</nav>
+{{ define "breadcrumb" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumb" (dict "p1" .p1.Parent "p2" .p2 ) }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
+{{ end }}
+<li>
+    {{ $shortTitle := "" }}
+    {{ $title := partial "block/title.html" .p1}}
+    {{ $titleWithoutSpace := replaceRE "(\\s|\n)" "" $title }}
+    {{ if $titleWithoutSpace }}
+    {{ $length := countrunes $titleWithoutSpace }}
+    {{ $offset := 3 }}
+    {{ if lt $length $offset }}
+    {{ $offset = $length }}
+    {{ end }}
+    {{ $shortTitle = slicestr $titleWithoutSpace 0 $offset }}
+    {{ end }}
+    <a href="{{ .p1.Permalink }}" data-short-title='{{ $shortTitle }}'>
+        <span>{{ .p1.Params.icon }} {{ $title }}</span>
+    </a>
+</li>
+{{ end }}

@@ -1,0 +1,18 @@
+<article>
+    <h1>{{ .Page.Params.icon }} {{ partial "block/title.html" .Page }}</h1>
+
+    {{ with .Lastmod  }}
+        <div class="datetime">
+            {{ partial "block/datetime.html" $ }}
+        </div>
+    {{ end }}
+
+    {{ with .Page.Params.music }}<div id="music" data-src="{{ . }}">▶️</div>{{ end }}
+
+    {{ if .ShowTOC }}
+        <div data-nosnippet>{{ .Page.TableOfContents}}</div>
+    {{ end }}
+
+    {{ .Page.Content }}
+    
+</article>

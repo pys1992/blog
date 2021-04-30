@@ -1,0 +1,463 @@
+:root {
+    --black: #121314;
+    --primary: #1a73e8;
+    --red: #ea4335;
+    --light-gray: #eeeeee;
+    --dark-gray: #828282;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+html {
+    overflow-y: overlay;
+}
+
+body {
+    max-width: 800px;
+    margin: calc(4vw + 80px) auto;
+    padding: 0 24px;
+    color: var(--black);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    letter-spacing: .08em;
+}
+
+body #headerImage {
+    height: calc(4vw + 100px);
+    width: 100vw;
+    margin: calc(0px - 4vw - 40px) calc(0px - 50vw + 50%) 25px;
+    object-fit: cover;
+
+    object-position: center {{ .Params.coverTop }};
+}
+
+.katex {
+    font-size: 1.1em;
+}
+
+.katex .cjk_fallback {
+    font-style: italic;
+    transform: scale(0.9);
+    display: inline-block;
+}
+
+time {
+    font-size: 12px;
+    color: var(--dark-gray);
+}
+
+/* header */
+header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 40px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    header {
+        /* 在小屏幕上，为了使导航条与页面在视觉上对齐，缩小其 padding，body 的 padding 依然是 10px */
+        padding: 6px;
+    }
+}
+
+header .left {
+    clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+    position: relative;
+    width: calc(100% - 100px);
+}
+
+header .left:after {
+    content: '';
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+header .left nav ol {
+    list-style: none;
+    display: flex;
+}
+
+header .left nav ol li {
+    position: relative;
+    margin: 0 8px;
+    height: 20px;
+    line-height: 20px;
+}
+
+header .left nav ol li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -9px;
+    top: 60%;
+    transform: translateY(-50%) rotate(20deg);
+    width: 2px;
+    height: 80%;
+    background-color: var(--light-gray);
+}
+
+header .left nav ol li a {
+    color: var(--black);
+    text-decoration: none;
+    padding: 0 4px 2px 4px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    header .left nav ol li:not(:last-child) a span {
+        display: none;
+    }
+
+    header .left nav ol li:not(:last-child) a::before {
+        content: attr(data-short-title);
+    }
+
+    header .left nav ol li:last-child {
+        overflow: hidden;
+        flex-grow: 0;
+    }
+
+    header .left nav ol li:last-child a span {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+header .left nav ol li a:hover {
+    color: var(--primary);
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: flex-end;
+    height: 100%;
+    line-height: 100%;
+    padding-right: 10px;
+}
+
+header .right #searchIcon {
+    height: 26px;
+    cursor: pointer;
+    background-color: var(--light-gray);
+    border-radius: 30px;
+    font-size: 16px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+@media (min-width: 799px) {
+    header .right #searchIcon {
+        width: 70px;
+        padding-left: 8px;
+    }
+
+    header .right #searchIcon::before {
+        content: "/";
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        color: var(--dark-gray);
+        font-size: 12px;
+        background: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+        border-radius: 3px;
+        box-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, 0.4);
+        height: 16px;
+        line-height: 14px;
+        padding: 1px 6px
+    }
+}
+
+/* header end*/
+
+/* article */
+
+article {
+    padding-bottom: 16px;
+}
+
+article h1 {
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+
+article .datetime {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+article #music {
+    margin-right: 4px;
+    cursor: not-allowed;
+    float: left;
+}
+
+article .highlight:hover .copyCode {
+    display: block;
+}
+
+article .highlight .copyCode {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 70%;
+    display: none;
+    background-color: #272822;
+    padding: 0 2px 1px 3px;
+    border-radius: 4px;
+}
+
+article .heading {
+    position: relative;
+}
+
+article .heading .heading-anchor {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-100%);
+    left: 0;
+    padding: 6px 2px;
+    color: var(--dark-gray);
+    text-decoration: none;
+    display: inline-block;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) opacity .25s;
+    opacity: 0;
+}
+
+article .heading .heading-anchor::before {
+    content: "#";
+}
+
+article .heading:hover .heading-anchor {
+    opacity: 1;
+}
+
+article .anchor-wrapper {
+    position: relative;
+}
+
+article .anchor-wrapper .anchor:target {
+    position: absolute;
+    top: -25vh;
+}
+
+article .anchor-wrapper .anchor:target+.anchor-indicator,
+.anchor-target+.anchor-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--red);
+    display: block;
+}
+
+/* article end*/
+
+/* page links */
+.page-links {
+    padding-top: 8px;
+    width: 60%;
+}
+
+.page-links a {
+    padding-bottom: 4px;
+    margin-bottom: 14px;
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px dashed var(--light-gray);
+}
+
+.page-links a span {
+    margin-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .page-links {
+        width: 100%;
+    }
+}
+
+.page-links a:hover {
+    color: var(--primary);
+}
+
+.page-links a:hover time {
+    color: var(--primary);
+}
+
+/* page links end*/
+
+/* search box */
+#searchBox {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: calc(5vw + 40px);
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 650px;
+    background-color: white;
+    box-shadow: 0 1px 6px 1px var(--dark-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    #searchBox {
+        width: calc(100vw - 40px);
+    }
+}
+
+#searchBox input {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+}
+
+#searchBox #searchBoxToolBar {
+    display: flex;
+    border-top: 1px solid var(--light-gray);
+}
+
+#searchBox #searchBoxToolBar div {
+    color: var(--dark-gray);
+    font-size: 12px;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+#searchBox #searchBoxToolBar div:first-child {
+    margin-left: 10px;
+}
+
+#searchBox>ul {
+    overflow-y: overlay;
+    max-height: 60vh;
+}
+
+#searchBox ul li {
+    list-style: none;
+    margin: 0;
+}
+
+#searchBox ul li .no-search-results {
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--dark-gray);
+    font-size: 12px;
+}
+
+#searchBox input:placeholder-shown~ul li .no-search-results,
+#searchBox input:placeholder-shown~#searchBoxToolBar {
+    display: none;
+}
+
+#searchBox ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 10px;
+    display: block;
+    font-size: 14px;
+    letter-spacing: .04em;
+}
+
+#searchBox ul li a .search-result-title {
+    font-weight: 600;
+}
+
+#searchBox ul li a .search-result-title .separator {
+    color: var(--dark-gray);
+    font-weight: 300;
+}
+
+#searchBox ul li a .search-result-title .highlight-title {
+    color: var(--red);
+}
+
+#searchBox input:focus~ul li:first-child a,
+#searchBox ul li a:hover,
+#searchBox ul li a:focus {
+    outline: 0;
+    background-color: var(--light-gray);
+}
+
+#searchBox ul li a .search-result-paragraphs {
+    margin-top: 6px;
+    color: var(--dark-gray);
+    font-size: 75%;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+#searchBox ul li a .search-result-paragraphs {
+    padding-left: 16px;
+}
+
+#searchBox ul li a .search-result-paragraphs .search-result-paragraph {
+    list-style: disc;
+    line-height: 1.8;
+}
+
+#searchBox ul li a .search-result-paragraphs .search-result-paragraph:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+#searchBox ul li a .search-result-paragraphs .search-result-paragraph .highlight-paragraph {
+    color: var(--red);
+}

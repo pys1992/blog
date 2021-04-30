@@ -1,0 +1,19 @@
+baseURL = "https://blog.pys.im/"
+languageCode = "zh-cn"
+enableEmoji = true
+enableGitInfo = true
+
+[Params]
+googleAnalyticsId = "G-XV3J4FRK59"
+favicon = "🌌"
+cover = "https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210207133529.jpg"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup]
+[markup.highlight]
+style = "monokai"
+
+[frontmatter]
+lastmod = [":default"]

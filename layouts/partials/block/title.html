@@ -1,0 +1,1 @@
+{{ if .Params.title }}{{ .Params.title }}{{ else if .File }}{{ if .IsNode }}{{ $separator := "/" }}{{ if in .File.Path "\\"}}{{ $separator = "\\" }}{{ end }}{{ $paths := split .File.Path  $separator }}{{ $index := sub (len $paths) 2 }}{{ index $paths $index }}{{ else }}{{ .File.BaseFileName }}{{ end }}{{ else if not .File }}{{ strings.TrimSuffix "s" .Title }}{{ end }}
