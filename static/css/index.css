@@ -307,8 +307,8 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
 }
 
 .page-links a {
-    padding-bottom: 4px;
-    margin-bottom: 14px;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
     color: var(--black);
     text-decoration: none;
     display: flex;
@@ -322,11 +322,22 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    flex-shrink: 1;
+}
+
+.page-links a time{
+    margin-top: 2px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 700px) {
     .page-links {
         width: 100%;
+    }
+    .page-links a {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 }
 
