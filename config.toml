@@ -15,5 +15,8 @@ home = ["HTML", "RSS", "JSON"]
 [markup.highlight]
 style = "monokai"
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [frontmatter]
 lastmod = [":default"]

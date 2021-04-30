@@ -226,6 +226,10 @@ article .datetime {
     margin-bottom: 20px;
 }
 
+article video {
+    max-width: 100%;
+}
+
 article #music {
     margin-right: 4px;
     cursor: not-allowed;

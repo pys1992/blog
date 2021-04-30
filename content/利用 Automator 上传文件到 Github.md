@@ -4,6 +4,10 @@
 
 本着能少安装软件就不安装的原则，我写了一个 Python 脚本，配合系统自带的 Automator ，实现了把文件夹里的文件或者剪切板的图片上传到 github。
 
+## 效果
+
+<video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload></video>
+
 ## Python 脚本
 
 > 我没接触过 Python，这个脚本是花了一天时间，一边看语法一边写出来的，如果有错误，敬请指正。
