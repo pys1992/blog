@@ -69,6 +69,7 @@ body #headerImage {
 time {
     font-size: 12px;
     color: var(--dark-gray);
+    font-family: "Helvetica Neue";
 }
 
 /* header */
@@ -316,7 +317,7 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     border-bottom: 1px dashed var(--light-gray);
 }
 
