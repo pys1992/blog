@@ -208,6 +208,8 @@ if __name__ == '__main__':
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430110059.png)
 
+**注意使用 `bash`来执行脚本。**
+
 在其中写上：
 
 ```
