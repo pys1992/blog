@@ -1,7 +1,9 @@
-{{ range .Pages }}
-    <a href="{{.Permalink}}">
-        {{ print }}
-        <span>{{ .Params.icon }} {{ partial "block/title.html" . }}</span>
-        {{ partial "block/datetime.html" . }}
-    </a>
+{{ range (.Pages.GroupBy "GitInfo" "AuthorDate").Reverse }}
+    {{ range .Pages }}
+        <a href="{{.Permalink}}">
+            {{ print }}
+            <span>{{ .Params.icon }} {{ partial "block/title.html" . }}</span>
+            {{ partial "block/datetime.html" . }}
+        </a>
+    {{ end }}
 {{ end }}
