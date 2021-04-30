@@ -323,6 +323,7 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
     text-overflow: ellipsis;
     white-space: nowrap;
     flex-shrink: 1;
+    font-size: 15px;
 }
 
 .page-links a time{
