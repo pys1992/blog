@@ -1,9 +1,9 @@
 <article>
     <h1>{{ .Page.Params.icon }} {{ partial "block/title.html" .Page }}</h1>
 
-    {{ with .Lastmod  }}
+    {{ if .ShowLastmod  }}
         <div class="datetime">
-            {{ partial "block/datetime.html" $ }}
+            {{ partial "block/datetime.html" .Page }}
         </div>
     {{ end }}
 

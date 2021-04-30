@@ -1,1 +1,7 @@
-<time>{{ .Lastmod.Local.Format "2006/1/2" }}</time>
+{{ with .Lastmod }}
+    <time>{{ .Local.Format "2006/1/2 15:04" }}</time>
+{{ else }}
+    {{ with .GitInfo }}
+        <time>{{ .AuthorDate.Format "2006/1/2 15:04" }}</time>
+    {{ end }}
+{{ end }}
