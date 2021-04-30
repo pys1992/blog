@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Disable QuotePath
-        run: git config --global core.quotePath false
+      # - name: Disable QuotePath
+      #   run: git config --global core.quotePath false
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
