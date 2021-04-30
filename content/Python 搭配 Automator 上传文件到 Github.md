@@ -76,7 +76,7 @@ def bytesToBase64(data):
 def getFilename(extension):
     return time.strftime("%Y%m%d%H%M%S", time.localtime()) + extension
 
-# 处理 github 返回的相应
+# 处理 github 返回的响应
 def handleResponse(response, filename, extension):
     if response.status_code == 201:
         url = buildUrl(filename, extension)
