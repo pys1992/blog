@@ -26,7 +26,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.80.0"
+          hugo-version: "0.82.1"
 
       - name: Build html files
         run: hugo --minify --disableKinds=taxonomy,term --enableGitInfo
