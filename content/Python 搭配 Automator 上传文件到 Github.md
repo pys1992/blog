@@ -6,9 +6,7 @@
 
 ## 效果
 
-<!-- <video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload loop></video> -->
-
-![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430172127.gif)
+<video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload loop></video>
 
 ## Python 脚本
 
