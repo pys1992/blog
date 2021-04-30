@@ -30,6 +30,7 @@ from PIL import Image, ImageGrab
 # PyObjC
 from AppKit import NSPasteboard, NSURLPboardType
 
+# 从剪切板获取完整的文件路径
 def getPath():
     # https://developer.apple.com/documentation/appkit/nspasteboard/pasteboardtype
     pb = NSPasteboard.generalPasteboard()
@@ -44,6 +45,7 @@ def getPath():
         pathUTF8 = pathByte.decode('utf-8')
         return parse.unquote(pathUTF8)
 
+# 把数据推送到 github
 def push(base64, filename):
     url = "https://api.github.com/repos/[yourGithubName]/[yourRepository]/contents/" + filename
 
@@ -62,15 +64,19 @@ def push(base64, filename):
 
     return response
 
+# 从文件路径得到文件后缀
 def getExtension(path):
   return os.path.splitext(path)[1]
 
+# 用 Base64 对给定的 Bytes 进行编码
 def bytesToBase64(data):
     return base64.b64encode(data).decode('utf-8')
 
+# 拼接文件名
 def getFilename(extension):
     return time.strftime("%Y%m%d%H%M%S", time.localtime()) + extension
 
+# 处理 github 返回的相应
 def handleResponse(response, filename, extension):
     if response.status_code == 201:
         url = buildUrl(filename, extension)
@@ -81,6 +87,7 @@ def handleResponse(response, filename, extension):
 
     return icon + " " + response.reason
 
+# 处理本地文件
 def handleLocalFile(path):
     with open(path, 'rb') as f:
 
@@ -94,6 +101,7 @@ def handleLocalFile(path):
 
         return handleResponse(response, filename, extension)
 
+# 处理剪切板的文件，与本地文件不同的是，剪切板的文件好像是在内存中，它并没有一个文件路径(有待研究)
 def handleClipboard():
     image = ImageGrab.grabclipboard()
 
@@ -117,6 +125,7 @@ def handleClipboard():
     else:
         return "❌ 剪切板的内容不是图片"
 
+# 把给定的字符串复制到剪切板
 def copyToClipboard(data):
     p = subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE)
 
@@ -126,9 +135,11 @@ def copyToClipboard(data):
 
     p.communicate()
 
+# 判断是否是图片
 def isImage(extension):
     return extension in [".png", ".jpeg", ".gif"]
 
+# 按照 jsdelivr 的规则构建 url
 def buildUrl(filename, extension):
     url = "https://cdn.jsdelivr.net/gh/[yourGithubName]/[yourRepository]@[theBranch]/" + filename
 
@@ -137,6 +148,7 @@ def buildUrl(filename, extension):
 
     return url
 
+# 按照 markdown 语法拼接 url
 def markdown(url):
     return "![](" + url + ")"
 
