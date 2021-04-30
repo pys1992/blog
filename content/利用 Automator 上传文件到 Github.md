@@ -6,7 +6,7 @@
 
 ## 效果
 
-<video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload></video>
+<video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload loop></video>
 
 ## Python 脚本
 
