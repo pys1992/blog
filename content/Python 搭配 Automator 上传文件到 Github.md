@@ -6,7 +6,9 @@
 
 ## 效果
 
-<video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload loop></video>
+<!-- <video src="https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430145844.mp4" autoplay preload loop></video> -->
+
+![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430172127.gif)
 
 ## Python 脚本
 
@@ -177,7 +179,7 @@ if __name__ == '__main__':
 
 配置好之后，这个脚本就可以使用了。使用截图工具截一张图片，然后在终端里运行`python3 /path-to-file/upload-file.py`，如果没出错，终端会返回提示信息。或者也可以在访达中复制一个已经存在的文件，然后运行脚本。
 
-如果文件很大，上传花费的时间可能很久。
+如果文件很大，上传花费的时间可能很久。另外由于 jsdelivr 的限制，好像是超过 20M 的文件，就不可以访问了。关于这一点，暂时没有好办法，只能尽可能的把图片或者文件控制在 20M 之内。
 
 ## 搭配 Automator 使用
 
