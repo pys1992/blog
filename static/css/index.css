@@ -303,7 +303,7 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
 /* page links */
 .page-links {
     padding-top: 8px;
-    width: 60%;
+    width: 75%;
 }
 
 .page-links a {
