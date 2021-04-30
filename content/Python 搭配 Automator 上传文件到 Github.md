@@ -243,7 +243,7 @@ EOF
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430204504.png)
 
-和第一步一样，新增一个运行 AppleScript 脚本，在其中写上：
+新增一个运行 AppleScript 脚本，在其中写上：
 
 ```
 on run {input, parameters}
