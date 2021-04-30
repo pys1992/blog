@@ -241,6 +241,8 @@ EOF
 
 这一步的目的是显示 Python 脚本返回的字符串，方便我们判断图片是否上传成功。
 
+![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430204504.png)
+
 和第一步一样，新增一个运行 AppleScript 脚本，在其中写上：
 
 ```
