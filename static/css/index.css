@@ -178,6 +178,7 @@ header .right {
 }
 
 header .right #searchIcon {
+    width: 26px;
     height: 26px;
     cursor: pointer;
     background-color: var(--light-gray);
@@ -186,6 +187,7 @@ header .right #searchIcon {
     position: relative;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     user-select: none;
 }
 
@@ -193,6 +195,7 @@ header .right #searchIcon {
     header .right #searchIcon {
         width: 70px;
         padding-left: 8px;
+        justify-content: start;
     }
 
     header .right #searchIcon::before {
