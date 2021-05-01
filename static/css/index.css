@@ -12,28 +12,6 @@
     box-sizing: border-box;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0)
-{
-    ::-webkit-scrollbar {
-        background-color: transparent;
-        width: 7px;
-        height: 7px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #babac0;
-        border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-button {
-        display: none;
-    }
-}
-
 html {
     overflow-y: overlay;
 }
@@ -52,7 +30,6 @@ body #headerImage {
     width: 100vw;
     margin: calc(0px - 4vw - 40px) calc(0px - 50vw + 50%) 25px;
     object-fit: cover;
-
     object-position: center {{ .Params.coverTop }};
 }
 
