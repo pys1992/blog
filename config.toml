@@ -1,5 +1,5 @@
 baseURL = "https://blog.pys.im/"
-languageCode = "zh-CN"
+languageCode = "zh"
 enableEmoji = true
 enableGitInfo = true
 
