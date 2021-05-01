@@ -79,7 +79,7 @@ import Fuse from 'https://deno.land/x/fuse@v6.4.6/dist/fuse.esm.min.js'
 ## 结合 hugo 使用
 
 * [官方给的的参考](https://gist.github.com/cmod/5410eae147e4318164258742dd053993)
-* 我优化的：[search.js](https://github.com/pys1992/hugo-theme-simple-blog/blob/main/static/js/search.js)，[css 样式](https://github.com/pys1992/hugo-theme-simple-blog/blob/main/layouts/_default/baseof.html#L1121)以及[index.json](https://github.com/pys1992/hugo-theme-simple-blog/blob/main/layouts/_default/index.json)。官方的代码写的比较乱，我优化了一下。
+* 我优化的：[search.js](https://github.com/pys1992/blog/blob/main/static/js/search.js)，[css 样式](https://github.com/pys1992/blog/blob/main/static/css/index.css#L359)以及[index.json](https://github.com/pys1992/blog/blob/main/layouts/_default/index.json)
 
 ### 总体的思想
 
