@@ -208,8 +208,6 @@ if __name__ == '__main__':
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430110059.png)
 
-**注意使用 `bash`来执行脚本。**
-
 在其中写上：
 
 ```
@@ -221,7 +219,7 @@ end run
 
 ### 配置 shell 脚本
 
-增加一个运行 Shell 脚本：
+增加一个运行 Shell 脚本(**注意使用 `bash`来执行脚本**)：
 
 ![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430110418.png)
 
