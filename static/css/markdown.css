@@ -298,7 +298,7 @@ article code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: #fafafa;
+  background-color: var(--light-gray);
   border-radius: 3px;
 }
 article pre {
