@@ -29,8 +29,11 @@ set BRANCH = "origin"
 @REM add 命令
 %GIT_PATH% add -A
 
+@REM add 命令
+%GIT_PATH% add .
+
 @REM commit 命令
-%GIT_PATH% commit -am "auto commit"
+%GIT_PATH% commit -m "auto commit"
 
 @REM pull 命令，如果不需要每次 push 之前都 pull ，可以把这个删除
 %GIT_PATH% pull %BRANCH%
