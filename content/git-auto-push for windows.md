@@ -29,9 +29,6 @@ set BRANCH = "origin"
 @REM add 命令
 %GIT_PATH% add -A
 
-@REM add 命令
-%GIT_PATH% add .
-
 @REM commit 命令
 %GIT_PATH% commit -m "auto commit"
 
