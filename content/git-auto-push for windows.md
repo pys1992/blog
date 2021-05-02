@@ -1,4 +1,7 @@
+> logseq 官方维护了一个 [git-auto](https://github.com/logseq/git-auto)，有丰富的配置，开箱即用。而我这个则比较简陋，不支持丰富配置，但是比较容易看懂。如果不需要复杂的功能，我这个办法也挺香的。
+
 ## 安装git
+
 首先需要在电脑上安装好 git，[下载地址](http://git-scm.com/download/win)。
 
 然后在安装目录里找到 `git.exe` 文件。如图：
