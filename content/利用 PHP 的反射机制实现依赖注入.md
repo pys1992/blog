@@ -352,7 +352,7 @@ dump($car);
 $car = new Car(new Chassis(new Tyre(new Axle), new Axle()))
 ```
 
-利用依赖注入是这样的，关于依赖注入可以参考[依赖注入&容器](https://starry.blog/posts/1)。
+利用依赖注入是这样的。
 
 
 ```php
