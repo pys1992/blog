@@ -1,7 +1,12 @@
-{{ range .Pages.Reverse }}
+{{ range .Pages }}
+    {{ $datetime :=  partial "block/datetime.html" . }}
+    {{ $.Scratch.Add "pagesWithDatetime" (slice (dict "page" . "datetime" $datetime)) }}
+{{ end }}
+
+{{ range sort ($.Scratch.Get "pagesWithDatetime") ".datetime" "desc" }}
     <a href="{{.Permalink}}">
         {{ print }}
-        <span>{{ .Params.icon }} {{ partial "block/title.html" . }}</span>
-        {{ partial "block/datetime.html" . }}
+        <span>{{ .Params.icon }} {{ partial "block/title.html" .page }}</span>
+        <time>{{ .datetime }}</time>
     </a>
 {{ end }}

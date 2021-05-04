@@ -3,7 +3,7 @@
 
     {{ if .ShowLastmod  }}
         <div class="datetime">
-            {{ partial "block/datetime.html" .Page }}
+            <time>{{ partial "block/datetime.html" .Page }}</time>
         </div>
     {{ end }}
 
