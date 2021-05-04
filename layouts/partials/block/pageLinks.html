@@ -4,8 +4,7 @@
 {{ end }}
 
 {{ range sort ($.Scratch.Get "pagesWithDatetime") ".datetime" "desc" }}
-    <a href="{{.Permalink}}">
-        {{ print }}
+    <a href="{{.page.Permalink}}">
         <span>{{ .Params.icon }} {{ partial "block/title.html" .page }}</span>
         <time>{{ .datetime }}</time>
     </a>
