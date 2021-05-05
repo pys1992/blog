@@ -2,7 +2,7 @@
 
 至于上传图片的工具，用过 [iPic](https://apps.apple.com/cn/app/ipic-markdown-图床工具/id1101244278?mt=12)、[uPic](https://github.com/gee1k/uPic)、[picGo](https://molunerfinn.com/PicGo/)，其中 iPic 是付费的，他们的好处是支持不同的图床、配置方便、不需要折腾。
 
-本着能少安装软件就不安装的原则，我写了一个 Python 脚本，配合系统自带的 Automator ，实现了把文件夹里的文件或者剪切板的图片上传到 github，甚至是微信群里的图片，也是可以上传的。
+本着能少安装软件就不安装的原则，我写了一个 Python 脚本，配合系统自带的 Automator ，实现了把文件夹里的**文件**(包括图片)或者剪切板的图片上传到 github，甚至是微信群里的图片，也是可以上传的。
 
 ## 效果
 
