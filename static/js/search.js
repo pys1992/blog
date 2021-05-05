@@ -112,7 +112,7 @@ let searchCallback = async () => {
      * ">" to "&gt;"
      */
     function angleBrackets2Entity(string) {
-        return string.replace(/[<>]/g, function (c) {
+        return string.replace(/[<>]/g, function(c) {
             return { "<": "&lt;", ">": "&gt;" }[c];
         });
     }
@@ -123,7 +123,7 @@ let searchCallback = async () => {
      * "&gt;" to ">" 
      */
     function entity2AngleBrackets(string) {
-        return string.replace(/(&lt;|&gt;)/g, function (c) {
+        return string.replace(/(&lt;|&gt;)/g, function(c) {
             return { "&lt;": "<", "&gt;": ">" }[c];
         });
     }
@@ -163,7 +163,7 @@ let searchCallback = async () => {
 
         let resultsLength = results.length
 
-        showSearchToolbar(resultsLength)
+        // showSearchToolbar(resultsLength)
 
         if (resultsLength) {
             showSearchResults(results)
@@ -195,14 +195,14 @@ let searchCallback = async () => {
 
         let timer
 
-        return function () {
+        return function() {
             let context = this
 
             let args = arguments
 
             clearTimeout(timer)
 
-            timer = setTimeout(function () {
+            timer = setTimeout(function() {
                 fn.apply(context, args)
             }, delay)
         }
@@ -466,7 +466,7 @@ let searchCallback = async () => {
     /**
      * Allow control search box by keyboard.
      */
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function(event) {
         // "/"
         if (event.keyCode === 191) {
             // Stop print window open.
