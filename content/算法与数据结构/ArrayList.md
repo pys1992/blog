@@ -1,4 +1,3 @@
-用数组实现线性表比较简单，记录一下代码即可。
 ```c
 #include <stdbool.h>
 #include <stdio.h>
