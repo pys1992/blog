@@ -16,7 +16,7 @@
 总体上说，前端方案是轻量级的，而后端方案成熟，大而全。
 
 ## fusejs
-一个轻量级的模糊搜索库。
+一个轻量级的模糊搜索库。本站的搜索方案就是用 fusejs 实现的，可以点击右上角的搜索图标体验。
 ### 安装方式
 [官网](https://fusejs.io/getting-started/installation.html)都写了。
 
