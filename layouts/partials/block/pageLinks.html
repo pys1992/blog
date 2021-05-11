@@ -1,5 +1,5 @@
 {{ range .Pages }}
-    {{ $datetime :=  partial "block/datetime.html" . }}
+    {{ $datetime := replaceRE "[\\n|\\s]" "" (partial "block/datetime.html" .) }}
     {{ $.Scratch.Add "pagesWithDatetime" (slice (dict "page" . "datetime" $datetime)) }}
 {{ end }}
 
