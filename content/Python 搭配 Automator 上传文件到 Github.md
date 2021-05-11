@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
 ## 安装 python 依赖
 
-运行`pip3 install pyobjc`安装 [pyobjc](https://pypi.org/project/pyobjc/)。
+运行`pip3 install pyobjc`安装 [pyobjc](https://pypi.org/project/pyobjc/)
 
 运行`pip3 install pip install Pillow`安装 [Pillow](https://pypi.org/project/Pillow/)
 
