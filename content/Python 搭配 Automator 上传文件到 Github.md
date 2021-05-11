@@ -245,12 +245,13 @@ EOF
 
 ```
 on run {input, parameters}
+  -- 使用消息通知显示 python 输出的字符串
 	display notification input as string
 	return input
 end run
 ```
 
-最后保存文件，到此已经配置完成。
+最后保存文件(默认保存位置是`~/Library/Services`)，到此已经配置完成。
 
 ### 设置快捷键
 
