@@ -233,7 +233,7 @@ EOF
 
 其中的 `/usr/local/bin/python3 <<EOF`和 `EOF`写法是一个 Hack，如果直接选择使用 python 执行，会出现找不到 Python 第三方库的情况，所以用了这个 Hack 的办法。
 
-![image-20210430110816518](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210430112121.png)
+![](https://cdn.jsdelivr.net/gh/pys1992/storage@main/20210511132828.png)
 
 ### 配置上传结束提示
 
