@@ -1,6 +1,7 @@
 <article>
-    <h1>{{ .Page.Params.icon }} {{ partial "block/title.html" .Page }}</h1>
-
+    {{ if not .Page.IsHome }}
+        <h1>{{ .Page.Params.icon }} {{ partial "block/title.html" .Page }}</h1>
+    {{ end }}
     {{ if .ShowLastmod  }}
         <div class="datetime">
             <time>{{ partial "block/datetime.html" .Page }}</time>
