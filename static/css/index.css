@@ -196,10 +196,6 @@ header .right #searchIcon {
 
 /* article */
 
-article {
-    padding-bottom: 16px;
-}
-
 article h1 {
     margin-bottom: 25px;
     word-wrap: break-word;

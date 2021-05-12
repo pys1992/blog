@@ -160,7 +160,7 @@ article > :first-child {
   margin-top: 0;
 }
 article > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 16px;
 }
 article a:not([href]) {
   color: inherit;
