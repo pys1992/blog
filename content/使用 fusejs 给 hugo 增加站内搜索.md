@@ -324,5 +324,5 @@ function executeSearch(term) {
 }
 ```
 
-在 MacOS 上按Command + / 或者在 Windows 上按 win + / 即可开启搜索。
+官方的这个例子可以使用快捷键打开搜索框，在 MacOS 上按 Command + / 或者在 Windows 上按 win + / 即可开启搜索。
 
