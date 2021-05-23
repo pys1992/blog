@@ -324,4 +324,5 @@ function executeSearch(term) {
 }
 ```
 
-CMD + / 或者 win + / 即可开启搜索。
+在 MacOS 上按Command + / 或者在 Windows 上按 win + / 即可开启搜索。
+
