@@ -79,7 +79,12 @@ import Fuse from 'https://deno.land/x/fuse@v6.4.6/dist/fuse.esm.min.js'
 ## 结合 hugo 使用
 
 * [官方给的的参考](https://gist.github.com/cmod/5410eae147e4318164258742dd053993)
-* 我优化的：[search.js](https://github.com/pys1992/blog/blob/main/static/js/search.js)，[css 样式](https://github.com/pys1992/blog/blob/main/static/css/index.css#L359)以及[index.json](https://github.com/pys1992/blog/blob/main/layouts/_default/index.json)
+  * 最简单的实现，代码少，容易读懂
+* 我优化的
+  * 按照我自己的想法增加了很多功能，同时代码也变得复杂。例如通过解析页面 dom 结构生成源数据(增加了标题和段落分开处理等功能)、根据返回的 indexes 数组重新组织搜索结果并高亮等等。
+  * [search.js](https://github.com/pys1992/blog/blob/main/static/js/search.js)
+  * [css 样式](https://github.com/pys1992/blog/blob/main/static/css/index.css#L359)
+  * [index.json](https://github.com/pys1992/blog/blob/main/layouts/_default/index.json)
 
 ### 总体的思想
 
