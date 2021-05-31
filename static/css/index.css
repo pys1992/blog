@@ -216,20 +216,23 @@ article #music {
     float: left;
 }
 
-article .highlight:hover .copyCode {
+article pre {
+    position: relative;
+}
+
+article pre:hover .copyCode {
     display: block;
 }
 
-article .highlight .copyCode {
+article pre .copyCode {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 4px;
     color: white;
     cursor: pointer;
-    font-size: 70%;
     display: none;
-    background-color: #272822;
-    padding: 0 2px 1px 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1px 4px;
     border-radius: 4px;
 }
 

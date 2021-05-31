@@ -52,7 +52,7 @@ let setLinksHref = function() {
 addLoadEvent(setLinksHref)
 
 let copyBtnCallback = function() {
-    for (const highlight of document.querySelectorAll(".highlight")) {
+    for (const pre of document.querySelectorAll("pre")) {
         let copyBtn = document.createElement('div');
         copyBtn.innerHTML = '复制';
         copyBtn.setAttribute("class", "copyCode")
@@ -60,7 +60,7 @@ let copyBtnCallback = function() {
         copyBtn.onclick = () => {
             let textarea = document.createElement('textarea');
             document.body.appendChild(textarea);
-            textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+            textarea.innerHTML = pre.querySelector("code").textContent;
             textarea.select();
             if (document.execCommand('copy')) {
                 document.execCommand('copy');
@@ -72,7 +72,7 @@ let copyBtnCallback = function() {
             }, 2000);
         }
 
-        highlight.appendChild(copyBtn)
+        pre.appendChild(copyBtn)
     }
 }
 addLoadEvent(copyBtnCallback)
