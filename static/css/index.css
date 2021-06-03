@@ -1,4 +1,4 @@
-:root {
+ :root {
     --black: #121314;
     --primary: #1a73e8;
     --red: #ea4335;
@@ -464,7 +464,7 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
 footer {
     padding: 15px 0;
     font-size: 12px;
-    display: inline-flex;
+    display: flex;
     gap: 6px;
 }
 
