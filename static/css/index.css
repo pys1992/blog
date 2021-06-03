@@ -460,3 +460,19 @@ article .anchor-wrapper .anchor:target+.anchor-indicator,
 #searchBox ul li a .search-result-paragraphs .search-result-paragraph .highlight-paragraph {
     color: var(--red);
 }
+
+footer {
+    padding: 15px 0;
+    font-size: 12px;
+    display: inline-flex;
+    gap: 6px;
+}
+
+footer .copyright {
+    color: var(--black);
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
