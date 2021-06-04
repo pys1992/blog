@@ -175,7 +175,7 @@ header .right #searchIcon {
         justify-content: start;
     }
 
-    header .right #searchIcon::before {
+    header .right #searchIcon::after {
         content: "/";
         position: absolute;
         top: 50%;
