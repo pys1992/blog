@@ -144,7 +144,7 @@ HAVING
 	count(DISTINCT e2.salary) = 3 -- N-1
 ```
 
-## 方法四 使用笛卡尔积
+### 方法四 使用笛卡尔积
 
 和使用 join 的方法差不多，只不过把两个表的有条件 join，改成了笛卡尔积。就不赘述了。
 
@@ -162,7 +162,7 @@ HAVING
 	count(DISTINCT e2.salary) = 3 -- N-1
 ```
 
-## 方法五 
+### 方法五 使用自定义变量
 
 #### 使用变量得到排名
 
@@ -216,7 +216,7 @@ WHERE
 	ranking = 4
 ```
 
-## 方法六 窗口函数
+### 方法六 窗口函数
 
 MySQL 8.0 内置了许多[窗口函数](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html)，我们这里要使用的是 [DENSE_RANK()](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank)。
 
