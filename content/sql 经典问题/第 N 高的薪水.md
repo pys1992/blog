@@ -216,3 +216,32 @@ WHERE
 	ranking = 4
 ```
 
+## 方法六 窗口函数
+
+MySQL 8.0 内置了许多[窗口函数](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html)，我们这里要使用的是 [DENSE_RANK()](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank)。
+
+#### 使用 DENSE_RANK() 得到排名
+
+```sql
+SELECT
+	salary,
+	DENSE_RANK() OVER (ORDER BY salary DESC)
+FROM
+	employee
+```
+
+得到如下数据：
+
+| salary | ranking |
+| ------ | ------- |
+| 600    | 1       |
+| 500    | 2       |
+| 300    | 3       |
+| 300    | 3       |
+| 200    | 4       |
+| 100    | 5       |
+
+#### 筛选数据
+
+筛选数据的方法和方法五一样，就不赘述了。
+
