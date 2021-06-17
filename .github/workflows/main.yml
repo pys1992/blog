@@ -23,6 +23,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+          timezoneMacos: "Asia/Shanghai"
+          timezoneWindows: "Shanghai Standard Time"
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
