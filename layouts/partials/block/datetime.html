@@ -11,8 +11,8 @@
    {{ with .Lastmod }}
       {{ .Local.Format "2006/01/02 15:04" }}
    {{ else }}
-       {{ with .GitInfo }}
-          {{ .AuthorDate.Format "2006/01/02 15:04" }}
-       {{ end }}
+      {{ with .GitInfo }}
+         {{ .AuthorDate.Format "2006/01/02 15:04" }}
+      {{ end }}
    {{ end }}
 {{ end }}
