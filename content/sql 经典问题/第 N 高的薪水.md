@@ -2,14 +2,14 @@
 
 假设有一个 employee 表，如下：
 
-| id   | salary |
-| ---- | ------ |
-| 1    | 100    |
-| 2    | 200    |
-| 3    | 300    |
-| 4    | 300    |
-| 5    | 500    |
-| 6    | 600    |
+| salary | ranking | @prevSalary := salary |
+| ------ | ------- | --------------------- |
+| 600    | 1       | 600                   |
+| 500    | 2       | 500                   |
+| 300    | 3       | 300                   |
+| 300    | 3       | 300                   |
+| 200    | 4       | 200                   |
+| 100    | 5       | 100                   |
 
 请查询出第 N 高的工资。
 
@@ -17,7 +17,7 @@
 
 ## 解答
 
-### 使用 limit
+### 方法一 使用 limit
 
 假设 N = 4
 
@@ -34,7 +34,7 @@ LIMIT 3, -- N-1
 1
 ```
 
-### 使用子查询
+### 方法二 使用子查询
 
 假设 N = 4
 
@@ -65,7 +65,7 @@ WHERE (
 
 例如针对 100 来说，有 200、300、500、600 比 100 高，所以对应的 count 是 4，那么意味着 100 的排名是 4 - 1 = 3。
 
-### 使用 join
+### 方法三 使用 join
 
 假设 N = 4
 
@@ -142,5 +142,77 @@ GROUP BY
 	e1.salary
 HAVING
 	count(DISTINCT e2.salary) = 3 -- N-1
+```
+
+## 方法四 使用笛卡尔积
+
+和使用 join 的方法差不多，只不过把两个表的有条件 join，改成了笛卡尔积。就不赘述了。
+
+```sql
+SELECT
+	e1.salary
+FROM
+	employee e1,
+	employee e2
+WHERE
+	e1.salary < e2.salary
+GROUP BY
+	e1.salary
+HAVING
+	count(DISTINCT e2.salary) = 3 -- N-1
+```
+
+## 方法五 
+
+#### 先使用变量得到排名
+
+```sql
+SELECT
+	salary,
+	@ranking := IF(@prevSalary = salary, @ranking, @ranking + 1) ranking,
+		@prevSalary := salary
+	FROM
+		employee,
+		(
+		SELECT
+			@ranking := 0,
+			@prevSalary := NULL) tmp
+	ORDER BY
+		salary DESC
+```
+
+得到如下数据：
+
+| salary | ranking | @prevSalary := salary |
+| ------ | ------- | --------------------- |
+| 100    | 1       | 100                   |
+| 200    | 2       | 200                   |
+| 300    | 3       | 300                   |
+| 300    | 3       | 300                   |
+| 500    | 4       | 500                   |
+| 600    | 5       | 600                   |
+
+重点关注 ranking 列。可以看到，已经得到排名了，下一步筛选出想要的数据即可。
+
+#### 筛选数据
+
+```sql
+SELECT
+	salary
+FROM (
+	SELECT
+		salary,
+		@ranking := IF(@prevSalary = salary, @ranking, @ranking + 1) ranking,
+			@prevSalary := salary
+		FROM
+			employee,
+			(
+			SELECT
+				@ranking := 0,
+				@prevSalary := NULL) tmp
+		ORDER BY
+			salary DESC) AS subTable
+WHERE
+	ranking = 4
 ```
 
