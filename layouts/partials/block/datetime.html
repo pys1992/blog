@@ -9,10 +9,10 @@
    {{ $maxDatetime }}
 {{ else }}
    {{ with .Lastmod }}
-      {{ .Local.Format "2006/01/02 15:04" }}
+      {{ .Local }}
    {{ else }}
       {{ with .GitInfo }}
-         {{ .AuthorDate.Format "2006/01/02 15:04" }}
+         {{ .AuthorDate }}
       {{ end }}
    {{ end }}
 {{ end }}
