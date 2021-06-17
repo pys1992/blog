@@ -128,7 +128,7 @@ ORDER BY
 
 以 200 为例，count_e2 为 3 意味着有 3 个比 200 大的工资，换句话说 200 排名第 4。要注意，这里的 `count(DISTINCT e2.salary) count_e2`，因为我们不需要重复的，所以用了 DISTINCT 去重。
 
-最后一步，使用 having 删选出想要的结果即可。
+最后一步，使用 having 筛选出想要的结果即可。
 
 #### 使用 having 筛选结果
 
