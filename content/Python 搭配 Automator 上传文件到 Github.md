@@ -176,7 +176,7 @@ if __name__ == '__main__':
 
 运行`pip3 install pyobjc`安装 [pyobjc](https://pypi.org/project/pyobjc/)
 
-运行`pip3 install pip install Pillow`安装 [Pillow](https://pypi.org/project/Pillow/)
+运行`pip3 install Pillow`安装 [Pillow](https://pypi.org/project/Pillow/)
 
 - pyobjc：一个 Python 和 Object-C 之间的桥梁，使得我们可以在 Python 中使用 [AppKit](https://developer.apple.com/documentation/appkit) 提供的功能，例如访问剪切板。
 - Pillow：一个 Python 的图像处理库

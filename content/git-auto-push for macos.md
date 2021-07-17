@@ -10,7 +10,7 @@ Mac 上自带 git，不需要额外安装，运行 `which git` 可以查看 git 
 
 [launchd](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html) 可以为我们创建守护进程。
 
-打开 `/Users/pys/Library/LaunchAgents`(LaunchAgents 中的配置会在用户登录是被执行)，新建一个文件，名字随意，例如`git-auto-push.plist`，写入一下内容：
+打开 `~/Library/LaunchAgents`(LaunchAgents 中的配置会在用户登录是被执行)，新建一个文件，名字随意，例如`git-auto-push.plist`，写入一下内容：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
